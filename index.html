@@ -39,17 +39,24 @@
             border-radius: 10px;
         }
         .img-row {
-    display: flex;
-    gap: 16px; /* 图片之间间距 */
-    justify-content: center;
-    flex-wrap: wrap; /* 手机屏幕不够自动换行 */
-    margin: 30px 0;
-}
-.img-row .llimg {
-    width: 220px; /* 单张图片宽度，调小这里就能缩小 */
-    max-width: 28%;
-    margin: 0;
-}
+            display: flex;
+            gap: 16px; /* 图片之间间距 */
+            justify-content: center;
+            flex-wrap: wrap; /* 手机屏幕不够自动换行 */
+            margin: 30px 0;
+        }
+        .img-row .llimg {
+            width: 220px; /* 单张图片宽度，调小这里就能缩小 */
+            max-width: 28%;
+            margin: 0;
+        }
+        .box-wrap {
+            border: 2px solid #ff88aa; /* 边框粗细+颜色 */
+            border-radius: 12px;       /* 圆角，不要就删掉这行 */
+            padding: 25px;            /* 内容和边框之间留白 */
+            max-width: 800px;
+            margin: 40px auto;        /* 上下外边距、居中 */
+        }
     </style>
 </head>
 <body>
@@ -64,11 +71,13 @@
     <div id="content">
         <h1>我有你给的爱因而完全——《天下无双》</h1>
         <h2 style="font-size:20px;font-weight:normal;">2026/7/4 制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
+        <div class="img-row">
         <p>我们用纸笔传达彼此的心意~</p>
         <img class="llimg" src="images/qs1.jpg">
         <img class="llimg" src="images/qs2.jpg">
         <img class="llimg" src="images/qs3.jpg">
         <p>每次看都很感动，很温暖！我要一直爱李好~</p>
+        </div>
     </div>
 
 
