@@ -30,7 +30,7 @@
             margin: 0 auto;
             padding: 0 20px;
         }
-        .autoimg {
+        .autosingleimg {
             max-width: 90%;
             width: 700px;
             height: auto;
@@ -38,6 +38,18 @@
             margin: 30px auto;
             border-radius: 10px;
         }
+        .img-row {
+    display: flex;
+    gap: 16px; /* 图片之间间距 */
+    justify-content: center;
+    flex-wrap: wrap; /* 手机屏幕不够自动换行 */
+    margin: 30px 0;
+}
+.img-row .llimg {
+    width: 220px; /* 单张图片宽度，调小这里就能缩小 */
+    max-width: 28%;
+    margin: 0;
+}
     </style>
 </head>
 <body>
@@ -53,9 +65,10 @@
         <h1>我有你给的爱因而完全——《天下无双》</h1>
         <h2 style="font-size:20px;font-weight:normal;">2026/7/4 制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
         <p>我们用纸笔传达彼此的心意~</p>
-        <img class="autoimg" src="images/qs1.jpg">
-        <img class="autoimg" src="images/qs2.jpg">
-        <img class="autoimg" src="images/qs3.jpg" alt="最爱的老婆写给我的情书哟~每次看都会很感动！">
+        <img class="llimg" src="images/qs1.jpg">
+        <img class="llimg" src="images/qs2.jpg">
+        <img class="llimg" src="images/qs3.jpg">
+        <p>每次看都很感动，很温暖！我要一直爱李好~</p>
     </div>
 
 
