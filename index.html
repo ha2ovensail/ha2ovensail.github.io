@@ -11,17 +11,34 @@
         }
         #lockBox {
             margin: 120px auto;
+            width: min(90%, 420px);
+        }
+        .pwd-group {
+            margin-top:15px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            align-items: center;
         }
         #pwd {
-            padding: 16px 24px;
-            font-size: 32px;
-            width: 220px;
+             width: 100%;
+            padding: 10px 14px;
+            font-size: 16px;
+            border:1px solid #ddd;
+            border-radius:6px;
         }
-        button {
-            padding: 16px 40px;
-            font-size: 32px;
+         #unlockBtn {
+            padding: 10px 24px;
+            font-size: 16px;
             cursor: pointer;
-            margin-left: 16px;
+            background: #ff7b9c;
+            color: white;
+            border: none;
+            border-radius: 6px;
+            white-space: nowrap;
+        }
+        #unlockBtn:hover{
+            background: #ff5c86;
         }
         #content {
             display: none;
@@ -51,7 +68,7 @@
             margin: 0;
         }
         .box-wrap {
-            border: 10px solid #ff88aa; /* 边框粗细+颜色 */
+            border: 10px solid pink; /* 边框粗细+颜色 */
             border-radius: 12px;       /* 圆角，不要就删掉这行 */
             padding: 25px;            /* 内容和边框之间留白 */
             max-width: 800px;
