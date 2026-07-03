@@ -4,12 +4,122 @@
     <meta charset="UTF-8">
     <title>我心里至爱生命至尊</title>
     <style>
-        body { text-align: center; margin-top: 100px; }
+        body { 
+            text-align: center; 
+            margin-top: 100px;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        #lockBox {
+            margin: 120px auto;
+        }
+        #pwd {
+            padding: 8px 12px;
+            font-size: 16px;
+            width: 220px;
+        }
+        button {
+            padding: 8px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        #content {
+            display: none;
+            line-height: 2.2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
     </style>
 </head>
 <body>
-    <h1>我有你给的爱因而完全——《天下无双》</h1>
-    <h1>2026/7/4 制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h1>
-    <p></p>
+    <!-- 密码输入框 -->
+    <div id="lockBox">
+        <h3>请输入专属访问密码</h3>
+        <input type="password" id="pwd" placeholder="输入密码">
+        <button onclick="checkPwd()">解锁查看</button>
+    </div>
+
+    <!-- 加密私密内容 -->
+    <div id="content">
+        <h1>我有你给的爱因而完全——《天下无双》</h1>
+        <h2 style="font-size:20px;font-weight:normal;">2026/7/4 制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
+    </div>
+
+<script>
+// 修改这里改成你想要的密码
+const PASSWORD = "<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>我心里至爱生命至尊</title>
+    <style>
+        body { 
+            text-align: center; 
+            margin-top: 100px;
+            font-family: "Microsoft Yahei", sans-serif;
+        }
+        #lockBox {
+            margin: 120px auto;
+        }
+        #pwd {
+            padding: 8px 12px;
+            font-size: 16px;
+            width: 220px;
+        }
+        button {
+            padding: 8px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin-left: 8px;
+        }
+        #content {
+            display: none;
+            line-height: 2.2;
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- 密码输入框 -->
+    <div id="lockBox">
+        <h3>请输入专属访问密码</h3>
+        <input type="password" id="pwd" placeholder="输入密码">
+        <button onclick="checkPwd()">解锁查看</button>
+    </div>
+
+    <!-- 加密私密内容 -->
+    <div id="content">
+        <h1>我有你给的爱因而完全——《天下无双》</h1>
+        <h2 style="font-size:20px;font-weight:normal;">2026/7/4 制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
+    </div>
+
+<script>
+// 修改这里改成你想要的密码
+const PASSWORD = "20060318";
+function checkPwd(){
+    let input = document.getElementById("pwd").value.trim();
+    if(input === PASSWORD){
+        document.getElementById("lockBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }else{
+        alert("密码不对，再试试～");
+    }
+}
+</script>
+</body>
+</html>";
+function checkPwd(){
+    let input = document.getElementById("pwd").value.trim();
+    if(input === PASSWORD){
+        document.getElementById("lockBox").style.display = "none";
+        document.getElementById("content").style.display = "block";
+    }else{
+        alert("密码不对，再试试～");
+    }
+}
+</script>
 </body>
 </html>
