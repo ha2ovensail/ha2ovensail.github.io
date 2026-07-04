@@ -9,6 +9,11 @@
             margin-top: 100px;
             font-family: "Microsoft Yahei", sans-serif;
         }
+        /* 全局图片尺寸变量，只修改这里数字统一缩放所有并排图片 */
+        :root {
+            --pic-size: 160px; 
+            /* 想缩小改成120px、140px；放大改成180px、200px */
+        }
         #lockBox {
             margin: 120px auto;
         }
@@ -21,7 +26,7 @@
             padding: 16px 40px;
             font-size: 32px;
             cursor: pointer;
-            margin-left: 16px;
+            margin-top: 16px; /* 换行后上下间距，不用左边距 */
         }
         #content {
             display: none;
@@ -40,22 +45,24 @@
         }
         .img-row {
             display: flex;
-            gap: 5px; /* 图片之间间距 */
+            gap: 5px;
             justify-content: center;
-            flex-wrap: wrap; /* 手机屏幕不够自动换行 */
+            flex-wrap: wrap;
             margin: 30px 0;
         }
+        /* 绑定变量，所有图片共用一个尺寸参数 */
         .img-row .llimg {
-            width: 160px; /* 单张图片宽度，调小这里就能缩小 */
+            width: var(--pic-size);
             max-width: 28%;
             margin: 0;
+            border-radius: 8px;
         }
         .box-wrap {
-            border: 10px solid #ff88aa; /* 边框粗细+颜色 */
-            border-radius: 12px;       /* 圆角，不要就删掉这行 */
-            padding: 25px;            /* 内容和边框之间留白 */
+            border: 10px solid #ff88aa;
+            border-radius: 12px;
+            padding: 25px;
             max-width: 800px;
-            margin: 40px auto;        /* 上下外边距、居中 */
+            margin: 40px auto;
         }
     </style>
 </head>
@@ -69,49 +76,43 @@
         <button onclick="checkPwd()">解锁查看</button>
     </div>
 
-    <!-- 加密私密内容 -->
+    <!-- 加密私密内容全部放入方框 -->
     <div id="content">
-        <h1>我有你给的爱因而完全——《天下无双》</h1>
-        <h2 style="font-size:20px;font-weight:normal;">2026/7/4 </h2>
-        <h2 style="font-size:20px;font-weight:normal;">制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
-        <h2 style="font-size:20px;font-weight:normal;">vensail</h2>
-        <br>
-        
-        <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-        <h2>2026/7/5 我们互相详细地了解彼此的恋爱观</h2>
-        <div class="img-row">
-        <img class="llimg" src="images/lhlag1.jpg">
-        <img class="llimg" src="images/lhlag2.jpg">
-        <img class="llimg" src="images/lhlag3.jpg">
+        <div class="box-wrap">
+            <h1>我有你给的爱因而完全——《天下无双》</h1>
+            <h2 style="font-size:20px;font-weight:normal;">2026/7/4 </h2>
+            <h2 style="font-size:20px;font-weight:normal;">制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
+            <h2 style="font-size:20px;font-weight:normal;">vensail</h2>
+            <br>
+            
+            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            
+            <h2>2026/7/5 我们互相详细地了解彼此的恋爱观</h2>
+            <div class="img-row">
+                <img class="llimg" src="images/lhlag1.jpg">
+                <img class="llimg" src="images/lhlag2.jpg">
+                <img class="llimg" src="images/lhlag3.jpg">
+            </div>
+            <div class="img-row">
+                <img class="llimg" src="images/wyhlag1.jpg">
+                <img class="llimg" src="images/wyhlag2.jpg">
+                <img class="llimg" src="images/wyhlag3.jpg">
+            </div>
+            <h2>很契合呀！李好和万宇航真是天造地设的一对~</h2>
+            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            
+            <h2>2026/6/27 我们用纸笔传达彼此的心意~</h2>
+            <div class="img-row">
+                <img class="llimg" src="images/qs1.jpg">
+                <img class="llimg" src="images/qs2.jpg">
+                <img class="llimg" src="images/qs3.jpg">
+            </div>
+            <h2>每次看都很感动，很温暖！我要一直爱李好~</h2>
+            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
         </div>
-        <div class="img-row">
-        <img class="llimg" src="images/wyhlag1.jpg">
-        <img class="llimg" src="images/wyhlag2.jpg">
-        <img class="llimg" src="images/wyhlag3.jpg">
-        </div>
-        <h2>很契合呀！李好和万宇航真是天造地设的一对~</h2>
-        <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-        <h2>2026/6/27 我们用纸笔传达彼此的心意~</h2>
-        <div class="img-row">
-        <img class="llimg" src="images/qs1.jpg">
-        <img class="llimg" src="images/qs2.jpg">
-        <img class="llimg" src="images/qs3.jpg">
-        </div>
-        <h2>每次看都很感动，很温暖！我要一直爱李好~</h2>
-        <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-
-        
     </div>
 
-
-
-
-
-
-
-    
 <script>
-// 仅填写纯数字/文字密码
 const PASSWORD = "20060318";
 function checkPwd(){
     let input = document.getElementById("pwd").value.trim();
