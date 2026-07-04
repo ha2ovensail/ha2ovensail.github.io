@@ -9,10 +9,13 @@
             margin-top: 100px;
             font-family: "Microsoft Yahei", sans-serif;
         }
-        /* 全局图片尺寸变量，只修改这里数字统一缩放所有并排图片 */
+        /* 全局图片缩放控制区，只改scale-rate统一缩放 */
         :root {
-            --pic-size: 160px; 
-            /* 想缩小改成120px、140px；放大改成180px、200px */
+          --scale-rate: 0.8;
+          --base-max-w: 200px;
+          --base-max-h: 200px;
+          --real-max-w: calc(var(--base-max-w) * var(--scale-rate));
+          --real-max-h: calc(var(--base-max-h) * var(--scale-rate));
         }
         #lockBox {
             margin: 120px auto;
@@ -26,7 +29,7 @@
             padding: 16px 40px;
             font-size: 32px;
             cursor: pointer;
-            margin-top: 16px; /* 换行后上下间距，不用左边距 */
+            margin-top: 16px;
         }
         #content {
             display: none;
@@ -50,12 +53,14 @@
             flex-wrap: wrap;
             margin: 30px 0;
         }
-        /* 绑定变量，所有图片共用一个尺寸参数 */
         .img-row .llimg {
-            width: var(--pic-size);
-            max-width: 28%;
+            width: auto;
+            height: auto;
+            max-width: var(--real-max-w);
+            max-height: var(--real-max-h);
             margin: 0;
             border-radius: 8px;
+            object-fit: contain;
         }
         .box-wrap {
             border: 10px solid #ff88aa;
@@ -86,7 +91,6 @@
             <br>
             
             <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-            
             <h2>2026/7/5 我们互相详细地了解彼此的恋爱观</h2>
             <div class="img-row">
                 <img class="llimg" src="images/lhlag1.jpg">
@@ -100,7 +104,6 @@
             </div>
             <h2>很契合呀！李好和万宇航真是天造地设的一对~</h2>
             <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
-            
             <h2>2026/6/27 我们用纸笔传达彼此的心意~</h2>
             <div class="img-row">
                 <img class="llimg" src="images/qs1.jpg">
