@@ -212,7 +212,8 @@ function createHeartRain() {
         h.style.left = Math.random() * 100 + '%';
         const dur = Math.random() * 7 + 5;
         h.style.animationDuration = dur + 's';
-        h.style.animationDelay = Math.random() * 10 + 's';
+        // 关键：随机初始延迟，爱心分散在屏幕各处，不会全堆顶部
+        h.style.animationDelay = -Math.random() * dur + 's';
         rainBox.appendChild(h);
     }
 }
