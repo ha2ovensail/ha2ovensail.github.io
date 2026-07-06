@@ -2,12 +2,15 @@
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Just the two of us</title>
     <style>
         body { 
             text-align: center; 
             margin-top: 100px;
             font-family: "Microsoft Yahei", sans-serif;
+            position: relative;
+            overflow-x: hidden;
         }
         /* 全局图片缩放控制区，只改scale-rate统一缩放 */
         :root {
@@ -19,6 +22,8 @@
         }
         #lockBox {
             margin: 120px auto;
+            position: relative;
+            z-index: 10;
         }
         #pwd {
             padding: 16px 24px;
@@ -30,6 +35,13 @@
             font-size: 32px;
             cursor: pointer;
             margin-top: 16px;
+            border: none;
+            background: #ff7b9c;
+            color: #fff;
+            border-radius: 6px;
+        }
+        button:hover {
+            background: #ff5c86;
         }
         #content {
             display: none;
@@ -37,6 +49,8 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 0 20px;
+            position: relative;
+            z-index: 10;
         }
         .autosingleimg {
             max-width: 90%;
@@ -68,10 +82,57 @@
             padding: 25px;
             max-width: 800px;
             margin: 40px auto;
+            background: #fff;
+            position: relative;
+            z-index: 10;
+        }
+        /* 全屏飘落爱心雨 底层 */
+        .heart-rain {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+            overflow: hidden;
+        }
+        .heart {
+            position: absolute;
+            color: #ff7b9c;
+            opacity: 0.7;
+            animation: fall linear infinite;
+        }
+        @keyframes fall {
+            0% {
+                transform: translateY(-10%) rotate(0deg);
+                opacity: 0;
+            }
+            10% { opacity: 1; }
+            90% { opacity: 1; }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+        /* 段落内跳动爱心动画 */
+        .beat-heart {
+            display: inline-block;
+            font-size: 26px;
+            color: #ff5c86;
+            margin: 0 3px;
+            animation: beat 1.2s ease-in-out infinite;
+        }
+        @keyframes beat {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.25); }
         }
     </style>
 </head>
 <body>
+    <!-- 全屏飘落爱心雨 -->
+    <div class="heart-rain"></div>
+
     <!-- 密码输入框 -->
     <div id="lockBox">
         <h1>请输入访问密码</h1>
@@ -81,7 +142,6 @@
         <button onclick="checkPwd()">解锁查看</button>
     </div>
 
-    <!-- 加密私密内容全部放入方框 -->
     <div id="content">
         <div class="box-wrap">
             <h1>我有你给的爱因而完全——《天下无双》</h1>
@@ -90,7 +150,18 @@
             <h2 style="font-size:20px;font-weight:normal;">vensail</h2>
             <br>
             
-            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            <!-- 动态跳动爱心行，替换原来静态❤️ -->
+            <div class="heart-line">
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+            </div>
 
             <h2>2026/7/6 万宇航和李好依然甜甜蜜蜜黏黏糊糊</h2>
             <p>“以后人工智能技术发展了 我要把老公的意识传送进机器人里 然后机器人的底层代码就会是爱老婆 我的也是”</p>
@@ -99,7 +170,17 @@
                 <img class="llimg" src="images/lhdraw1.jpg">
             </div>
             <h2>我们今天说了好多永远永远幸福地在一起的话，好喜欢~</h2>
-            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            <div class="heart-line">
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+            </div>
             
             <h2>2026/7/5 我们互相详细地了解彼此的恋爱观</h2>
             <div class="img-row">
@@ -113,7 +194,17 @@
                 <img class="llimg" src="images/wyhlag3.jpg">
             </div>
             <h2>很契合呀！李好和万宇航真是天造地设的一对~</h2>
-            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            <div class="heart-line">
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+            </div>
             
             <h2>2026/6/27 我们用纸笔传达彼此的心意</h2>
             <div class="img-row">
@@ -122,11 +213,42 @@
                 <img class="llimg" src="images/qs3.jpg">
             </div>
             <h2>每次看都很感动，很温暖！我要一直爱李好~</h2>
-            <p>❤️❤️❤️❤️❤️❤️❤️❤️❤️</p>
+            <div class="heart-line">
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+                <span class="beat-heart">❤</span>
+            </div>
         </div>
     </div>
 
 <script>
+// 全屏飘落爱心雨，70颗密集版
+function createHeartRain() {
+    const rainBox = document.querySelector('.heart-rain');
+    const heartCount = 70;
+
+    for(let i = 0; i < heartCount; i++) {
+        const heart = document.createElement('div');
+        heart.className = 'heart';
+        heart.innerHTML = '❤';
+        const size = Math.random() * 22 + 10;
+        heart.style.fontSize = size + 'px';
+        heart.style.left = Math.random() * 100 + '%';
+        const fallTime = Math.random() * 7 + 5;
+        heart.style.animationDuration = fallTime + 's';
+        heart.style.animationDelay = Math.random() * 10 + 's';
+        rainBox.appendChild(heart);
+    }
+}
+window.onload = createHeartRain;
+
+// 密码解锁
 const PASSWORD = "20060318";
 function checkPwd(){
     let input = document.getElementById("pwd").value.trim();
