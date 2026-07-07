@@ -120,6 +120,23 @@
             0%, 100% { transform: scale(1); }
             50% { transform: scale(1.2); }
         }
+
+        .video-row {
+            display: flex;
+            gap: 5px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin: 30px 0;
+        }
+        .video-row video {
+            width: auto;
+            height: auto;
+            max-width: var(--real-max-w);
+            max-height: var(--real-max-h);
+            margin: 0;
+            border-radius: 8px;
+            object-fit: contain;
+        }
     </style>
 </head>
 <body>
@@ -143,9 +160,27 @@
             <h2 style="font-size:20px;font-weight:normal;">制作这个网页的初衷是，希望即使数十年后我们离开这个世界，我们经历的点点滴滴也能永远留在这里。</h2>
             <h2 style="font-size:20px;font-weight:normal;">vensail</h2>
             <br>
+             <p>
+<span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span>
+</p>
+
+            <h2>2026/7/8 今天的标题是无视他人继续幸福</h2>
+            <p>今天老婆答应我在路上拍视频说三遍“老公我爱你”，李好好宠我~我好爱李好</p>
+            <div class="video-row">
+    <video controls src="videos/lgwan.mp4"></video>
+            </div>
+            <p>晚上打游戏被人搞心态了，我很生气，因为那些神经病一直骚扰我的亲亲老婆。老婆即使自己被骚扰也一直说我才是她老公，还一直考虑我的感受，真的很感动呜呜呜，我会很爱很爱李好的！我一直担心会影响老婆的心情，然后我就亲亲摸摸抱抱我的亲亲老婆~</p>
+            <p>我们就这样无视他人继续幸福~</p>
+            <p>虽然游戏玩得不愉快吧，但是我和老婆并肩作战一致对外的感觉真的很感动吧！当然希望我们以后都顺顺利利的，但是万一遇到突发情况，只要我们两颗心紧紧靠在一起，我相信没有什么是克服不了的。</p>
+            <p>其实游戏里无非是影响心情（虽然让老婆心情不好的事情我不允许发生！），但是也提醒我了，在现实生活中我要更加努力。无论是心理还是人身还是物质上我都要快快变强大把我的亲亲老婆李好保护好！</p>
+            <h2>我们就这样一起守护我们甜甜蜜蜜的小世界~</h2>
+
+            
             <p>
 <span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span><span class="beat-heart">❤️</span>
 </p>
+
+            
 <h2>2026/7/7 今天老婆公司聚餐还给我发了两张美照</h2>
             <p>今天老婆给我发了两张美照，很美味啊很美味啊~</p>
             <div class="img-row">
@@ -206,7 +241,7 @@ function createHeartRain() {
     for(let i = 0; i < heartCount; i++) {
         const h = document.createElement('div');
         h.className = 'rain-heart';
-        h.innerHTML = '❤';
+        h.innerHTML = '❤️';
         const size = Math.random() * 22 + 10;
         h.style.fontSize = size + 'px';
         h.style.left = Math.random() * 100 + '%';
